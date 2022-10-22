@@ -6,30 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <title>Aim Training</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"
+    integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
   <div class="screen">
     <h1>Aim Training</h1>
-    <a href="#" class="start">Начать игру</a>
+    <a id='start-btn' href="#" class="start">Начать игру</a>
   </div>
 
   <div class="screen">
     <h1>Выберите время</h1>
-    <ul class="time-list">
+    <ul class="time-list" id="time-list">
       <li>
-        <button class="time-btn">
+        <button data-time="10" class="time-btn">
           10 сек
         </button>
       </li>
       <li>
-        <button class="time-btn">
+        <button data-time="20" class="time-btn">
           20 сек
         </button>
       </li>
       <li>
-        <button class="time-btn">
+        <button data-time="30" class="time-btn">
           30 сек
+        </button>
+        <button data-time="40" class="time-btn">
+          40 сек
         </button>
       </li>
     </ul>
@@ -39,6 +45,7 @@
     <h3>Осталось <span id="time">00:00</span></h3>
     <div class="board" id="board"></div>
   </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
