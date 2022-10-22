@@ -6,7 +6,7 @@ const board = document.querySelector("#board")
 
 let poinsts = 0
 let time = 0
-
+let setIntervalIndex = 0;
 const circleClickHandler = (event) =>{
   if(event.target.classList.contains("circle")){
     event.target.remove()
@@ -35,7 +35,7 @@ const decreaseTime = () => {
   }
 }
 const startGame = () => {
-  setInterval(decreaseTime, 1000)
+  setIntervalIndex = setInterval(decreaseTime, 1000)
   createRandomCircle()
 }
 const chooseTime = (event) => {
@@ -48,9 +48,10 @@ const chooseTime = (event) => {
 }
 
 const finishGame = () => {
+  clearInterval(setIntervalIndex)
   timeTable.parentNode.classList.add("hide")
   board.innerHTML = `
-  <h1>Ваш счёт:<span class="primary">${poinsts}</span></h1>
+  <h1>Ваш счёт: <span class="primary">${poinsts}</span></h1>
   `
 }
 const createRandomCircle = () => {
